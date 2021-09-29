@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsFileSystemMonitor", "WsFileSystemMonitor\WsFileSystemMonitor.csproj", "{A8515E18-85B1-4271-B823-842272B6C69C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{341BD154-C127-4DFD-8304-4C56E026A5F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{C6B0D1B2-EF66-44D4-8750-D3E78A199F25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{36C606BA-C2F6-4B59-9BA1-A971290D2AEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - CrossCutting", "3.1 - CrossCutting", "{DFD25D78-EEC5-447C-8855-D120DA115021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FsMonitor.CrossCutting.Crypto", "FsMonitor.CrossCutting.Crypto\FsMonitor.CrossCutting.Crypto.csproj", "{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FsMonitor.CrossCutting.Http", "FsMonitor.CrossCutting.Http\FsMonitor.CrossCutting.Http.csproj", "{ACC01AB2-C224-4630-B7F4-904810C1C8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FsMonitor.CrossCutting.Model", "FsMonitor.CrossCutting.Model\FsMonitor.CrossCutting.Model.csproj", "{7905CB3F-F364-4137-B766-5782C0D5E414}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Gui", "1.1 Gui", "{AB58A64E-F92E-49B0-8718-63C21CA83BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 Service", "1.2 Service", "{827C0E8A-361A-4EE8-B958-51C3832BCD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSystemMonitor", "WpfSystemMonitor\WpfSystemMonitor.csproj", "{EFA242B8-47CA-4DD1-886D-094581590E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FsMonitor.Services", "FsMonitor.Services\FsMonitor.Services.csproj", "{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8515E18-85B1-4271-B823-842272B6C69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8515E18-85B1-4271-B823-842272B6C69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8515E18-85B1-4271-B823-842272B6C69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8515E18-85B1-4271-B823-842272B6C69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC01AB2-C224-4630-B7F4-904810C1C8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC01AB2-C224-4630-B7F4-904810C1C8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC01AB2-C224-4630-B7F4-904810C1C8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC01AB2-C224-4630-B7F4-904810C1C8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7905CB3F-F364-4137-B766-5782C0D5E414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7905CB3F-F364-4137-B766-5782C0D5E414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7905CB3F-F364-4137-B766-5782C0D5E414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7905CB3F-F364-4137-B766-5782C0D5E414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA242B8-47CA-4DD1-886D-094581590E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA242B8-47CA-4DD1-886D-094581590E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA242B8-47CA-4DD1-886D-094581590E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA242B8-47CA-4DD1-886D-094581590E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8515E18-85B1-4271-B823-842272B6C69C} = {827C0E8A-361A-4EE8-B958-51C3832BCD6B}
+		{DFD25D78-EEC5-447C-8855-D120DA115021} = {36C606BA-C2F6-4B59-9BA1-A971290D2AEF}
+		{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A} = {DFD25D78-EEC5-447C-8855-D120DA115021}
+		{ACC01AB2-C224-4630-B7F4-904810C1C8E7} = {DFD25D78-EEC5-447C-8855-D120DA115021}
+		{7905CB3F-F364-4137-B766-5782C0D5E414} = {DFD25D78-EEC5-447C-8855-D120DA115021}
+		{AB58A64E-F92E-49B0-8718-63C21CA83BD6} = {341BD154-C127-4DFD-8304-4C56E026A5F2}
+		{827C0E8A-361A-4EE8-B958-51C3832BCD6B} = {341BD154-C127-4DFD-8304-4C56E026A5F2}
+		{EFA242B8-47CA-4DD1-886D-094581590E9A} = {AB58A64E-F92E-49B0-8718-63C21CA83BD6}
+		{C0D8D30B-A79D-49DE-9C4D-34B6BDA9D92B} = {C6B0D1B2-EF66-44D4-8750-D3E78A199F25}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F59FEE07-344E-497A-8A34-8E6EBBE46253}
+	EndGlobalSection
+EndGlobal

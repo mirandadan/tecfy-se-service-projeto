@@ -1,0 +1,8 @@
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Http.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Http.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\bin\Debug\RestSharp.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\bin\Debug\RestSharp.xml
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.CoreCompileInputs.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.CopyComplete
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.pdb

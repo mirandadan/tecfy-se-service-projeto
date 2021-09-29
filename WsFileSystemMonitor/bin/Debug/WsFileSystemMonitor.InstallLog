@@ -1,0 +1,78 @@
+﻿Instalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Instalando o serviço WsFileSystemMonitor...
+Serviço WsFileSystemMonitor foi instalado com êxito.
+Criando a origem de EventLog WsFileSystemMonitor no log Application...
+Confirmando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Desinstalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Removendo a origem do EventLog WsFileSystemMonitor.
+Ocorreu uma exceção durante a desinstalação do instalador System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: Acesso ao Registro solicitado não é permitido.
+Ocorreu uma exceção ao desinstalar. Essa exceção será ignorada e a desinstalação continuará. Mas talvez o aplicativo não seja totalmente desinstalado após a conclusão da desinstalação.
+Desinstalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Removendo a origem do EventLog WsFileSystemMonitor.
+Serviço WsFileSystemMonitor está sendo removido do sistema...
+Serviço WsFileSystemMonitor foi removido com êxito do sistema.
+Instalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Instalando o serviço WsFileSystemMonitor...
+Criando a origem de EventLog WsFileSystemMonitor no log Application...
+Revertendo o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Restaurando o log de eventos para o estado anterior da origem WsFileSystemMonitor.
+Ocorreu uma exceção durante a fase de reversão do instalador System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: Fonte não encontrada, mas alguns ou todos os logs de evento não puderam ser pesquisados. Logs inacessíveis: Security.
+Ocorreu uma exceção durante a fase de reversão da instalação. Essa exceção será ignorada e a reversão continuará. Mas talvez o computador não reverta totalmente para o estado inicial após a conclusão da reversão.
+Instalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Instalando o serviço WsFileSystemMonitor...
+Criando a origem de EventLog WsFileSystemMonitor no log Application...
+Revertendo o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Restaurando o log de eventos para o estado anterior da origem WsFileSystemMonitor.
+Ocorreu uma exceção durante a fase de reversão do instalador System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: Fonte não encontrada, mas alguns ou todos os logs de evento não puderam ser pesquisados. Logs inacessíveis: Security.
+Ocorreu uma exceção durante a fase de reversão da instalação. Essa exceção será ignorada e a reversão continuará. Mas talvez o computador não reverta totalmente para o estado inicial após a conclusão da reversão.
+Instalando o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Instalando o serviço WsFileSystemMonitor...
+Criando a origem de EventLog WsFileSystemMonitor no log Application...
+Revertendo o assembly 'D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.InstallLog
+   assemblypath = D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
+Restaurando o log de eventos para o estado anterior da origem WsFileSystemMonitor.
+Ocorreu uma exceção durante a fase de reversão do instalador System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: Fonte não encontrada, mas alguns ou todos os logs de evento não puderam ser pesquisados. Logs inacessíveis: Security.
+Ocorreu uma exceção durante a fase de reversão da instalação. Essa exceção será ignorada e a reversão continuará. Mas talvez o computador não reverta totalmente para o estado inicial após a conclusão da reversão.

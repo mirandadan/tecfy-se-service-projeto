@@ -1,0 +1,6 @@
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\bin\Debug\FsMonitor.CrossCutting.Crypto.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\bin\Debug\FsMonitor.CrossCutting.Crypto.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\obj\Debug\FsMonitor.CrossCutting.Crypto.csproj.AssemblyReference.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\obj\Debug\FsMonitor.CrossCutting.Crypto.csproj.CoreCompileInputs.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\obj\Debug\FsMonitor.CrossCutting.Crypto.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Crypto\obj\Debug\FsMonitor.CrossCutting.Crypto.pdb

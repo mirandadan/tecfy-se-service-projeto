@@ -1,0 +1,17 @@
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.Services.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.Services.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.CrossCutting.Http.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.CrossCutting.Model.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\Newtonsoft.Json.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\NLog.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\RestSharp.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.CrossCutting.Http.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\FsMonitor.CrossCutting.Model.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\Newtonsoft.Json.xml
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\NLog.xml
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\bin\Debug\RestSharp.xml
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\obj\Debug\FsMonitor.Services.csproj.AssemblyReference.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\obj\Debug\FsMonitor.Services.csproj.CoreCompileInputs.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\obj\Debug\FsMonitor.Services.csproj.CopyComplete
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\obj\Debug\FsMonitor.Services.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.Services\obj\Debug\FsMonitor.Services.pdb

@@ -1,0 +1,1 @@
+Copiar o arquivo para a pasta "C:\TecfyLog\".

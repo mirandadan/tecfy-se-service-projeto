@@ -1,0 +1,5 @@
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\bin\Debug\FsMonitor.CrossCutting.Model.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\bin\Debug\FsMonitor.CrossCutting.Model.pdb
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.csproj.CoreCompileInputs.cache
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.dll
+D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.pdb
