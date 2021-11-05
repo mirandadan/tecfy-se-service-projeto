@@ -52,5 +52,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FsMonitor.CrossCutting.Crypto\FsMonitor.CrossCutting.Crypto.csproj">
+      <Project>{C100B0A5-12EC-4B2F-9BC2-DBA1FD36CC0A}</Project>
+      <Name>FsMonitor.CrossCutting.Crypto</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

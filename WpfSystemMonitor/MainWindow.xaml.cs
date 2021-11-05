@@ -27,7 +27,7 @@ namespace WpfSystemMonitor
         }
 
         private void TaskRefresh(object sender, EventArgs e)
-        {           
+        {
             listView.DataContext = DB.GetLogs();
 
             listView.SelectedIndex = listView.Items.Count - 1;
@@ -40,11 +40,20 @@ namespace WpfSystemMonitor
             {
                 dispatcherTimer.Stop();
                 btStartStop.Content = "Iniciar";
-            } else
+            }
+            else
             {
                 dispatcherTimer.Start();
                 btStartStop.Content = "Parar";
             }
+        }
+
+        private void btClearRecords_Click(object sender, RoutedEventArgs e)
+        {
+            listView.DataContext = DB.DeleteLogs();
+
+            listView.SelectedIndex = listView.Items.Count - 1;
+            listView.ScrollIntoView(listView.SelectedItem);
         }
     }
 }

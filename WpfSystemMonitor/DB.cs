@@ -10,7 +10,7 @@ namespace WpfSystemMonitor
 
         private static SQLiteConnection DbConnection()
         {
-            sqliteConnection = new SQLiteConnection("Data Source=c:\\TecfyLog\\Log.db3; Version=3;");
+            sqliteConnection = new SQLiteConnection(@"Data Source=C:\\Tecfy2SE\\Log.db3;Version=3; Version=3;");
             if (sqliteConnection.State == ConnectionState.Closed)
                 sqliteConnection.Open();
 
@@ -18,14 +18,32 @@ namespace WpfSystemMonitor
         }
 
         public static DataTable GetLogs()
-        {
-            
+        {            
             try
             {
                 using (var cmd = DbConnection().CreateCommand())
                 {
                     DataTable dt = new DataTable();
                     cmd.CommandText = "SELECT * FROM Log";
+                    var da = new SQLiteDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable DeleteLogs()
+        {
+            try
+            {
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    DataTable dt = new DataTable();
+                    cmd.CommandText = "Delete FROM Log";
                     var da = new SQLiteDataAdapter(cmd);
                     da.Fill(dt);
                     return dt;

@@ -6,3 +6,14 @@ D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Htt
 D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.CopyComplete
 D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.dll
 D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.pdb
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Http.dll
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Http.pdb
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Crypto.dll
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\RestSharp.dll
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\FsMonitor.CrossCutting.Crypto.pdb
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\bin\Debug\RestSharp.xml
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.AssemblyReference.cache
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.CoreCompileInputs.cache
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.csproj.CopyComplete
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.dll
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Http\obj\Debug\FsMonitor.CrossCutting.Http.pdb

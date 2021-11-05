@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using FsMonitor.CrossCutting.Crypto;
+using RestSharp;
 using RestSharp.Authenticators;
 using System.Net;
 
@@ -14,7 +15,7 @@ namespace FsMonitor.CrossCutting.Http
         {
             BaseAddress = baseAddress;
             _restClient = new RestClient(BaseAddress);
-            _restClient.Authenticator = new HttpBasicAuthenticator(userName, password);
+            _restClient.Authenticator = new HttpBasicAuthenticator(Decrypt.GetDecrypt(userName), Decrypt.GetDecrypt(password));
             _restClient.Timeout = -1;
 
             if (!string.IsNullOrEmpty(proxyAddress)) {
@@ -30,12 +31,11 @@ namespace FsMonitor.CrossCutting.Http
         {
             var request = new RestRequest(Method.POST);
             request.AddFile("file", content, fileName);
-            request.AddParameter("file_name", fileName);
-            request.AddParameter("folder_hash", folderHash);
+            request.AddParameter("name", fileName);
+            request.AddParameter("hash", folderHash);
 
             var response = _restClient.Execute(request);
-            if(response.StatusCode == HttpStatusCode.OK) {
-                
+            if(response.StatusCode == HttpStatusCode.Created) {                
                 return response.Content;
             }
             throw new WebException(response.Content);

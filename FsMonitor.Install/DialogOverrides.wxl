@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="pt-br" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="WelcomeDlgDescription" >[ProductName] [ProductVersion] será instalado. Clique em Avançar para continuar ou em Cancelar para sair.</String>
+  <String Id="WelcomeUpdateDlgDescriptionUpdate" Overridable="yes">[ProductName] será atualizado para [ProductVersion]. Clique em Avançar para continuar ou em Cancelar para sair.</String>
+  <String Id="WelcomeDlgTitle" Overridable="yes">{\WixUI_Font_Bigger}Instalação [ProductName] [ProductVersion]</String>
+
+  <!-- Some of these aren't currently used, but might as well make the chagnes while I'm here -->
+  <String Id="VerifyReadyDlgInstalarText" Overridable="yes">Clique em Instalar para começar a instalação. Clique em voltar para revisar ou mudar alguma configuração da instalação. Clique em Cancelar para sair.</String>
+  <String Id="VerifyReadyDlgChangeText" Overridable="yes">Clique em Change para mudar a instalação. Clique em voltar para revisar ou mudar alguma configuração da instalação. Clique em Cancelar para sair</String>
+  <String Id="VerifyReadyDlgRepairText" Overridable="yes">Clique em Repair para reparar a instalação of [ProductName]. Clique em voltar para revisar ou mudar alguma configuração da instalação. Clique em Cancelar para sair</String>
+  <String Id="VerifyReadyDlgRemoveText" Overridable="yes">Clique em Remove para remover [ProductName]. Clique em voltar para revisar ou mudar alguma configuração da instalação. Clique em Cancelar para sair</String>
+  <String Id="VerifyReadyDlgUpdateText" Overridable="yes">Clique em Update para atualizar [ProductName]. Clique em voltar para revisar ou mudar alguma configuração da instalação. Clique em Cancelar para sair</String>
+
+  <String Id="UserExitTitle" >{\WixUI_Font_Bigger}Instalação do [ProductName] foi interrompida</String>
+  <String Id="UserExitDescription1" >Instalação do [ProductName] foi interrompida. Seu sistema não foi modificado.</String>
+  <String Id="UserExitDescription2" >Clique no botão Concluir para sair do instalador.</String>
+
+  <String Id="ProgressDlgTextInstalaring" Overridable="yes">Por favor aguarde enquanto [ProductName] é instalado.</String>
+  <String Id="ProgressDlgTextChanging" Overridable="yes">Por favor aguarde enquanto [ProductName] é modificado.</String>
+  <String Id="ProgressDlgTextRepairing" Overridable="yes">Por favor aguarde enquanto [ProductName] é reparado.</String>
+  <String Id="ProgressDlgTextRemoving" Overridable="yes">Por favor aguarde enquanto [ProductName] é removido.</String>
+  <String Id="ProgressDlgTextUpdating" Overridable="yes">Por favor aguarde enquanto [ProductName] é atualizado.</String>
+
+
+  <String Id="ExitDialogDescription" Overridable="yes">Clique no botão Concluir para sair do instalador.</String>
+  <String Id="ExitDialogTitle" Overridable="yes">{\WixUI_Font_Bigger}Instalação do [ProductName] [ProductVersion] foi concluída.</String>
+</WixLocalization>

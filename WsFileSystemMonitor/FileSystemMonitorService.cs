@@ -19,7 +19,7 @@ namespace WsFileSystemMonitor
         public void Start(string[] args)
         {
             OnStart(args);
-            while (true) ;
+            while (true);
         }
 
         protected override void OnStart(string[] args)

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:netfx ="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE" Language="1033" Version="1.0.0" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"
+             Platform="x64"
+             InstallPrivileges="elevated"
+             Description="Tecfy2SE"
+             Comments="Tecfy2SE 1.0.0 installation package"
+             Id="*" />
+
+    <MajorUpgrade DowngradeErrorMessage="Uma versão mais nova de [ProductName] já está instalada."
+                  Schedule="afterInstallValidate"
+                  AllowDowngrades="no" AllowSameVersionUpgrades="no"/>
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Icon Id="tecfy2se.ico" SourceFile="..\Common\tecfy2se.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="tecfy2se.ico" />
+
+    <Feature Id="ProductFeature" Title="Tecfy2SE" Level="1">
+      <ComponentGroupRef Id="ProductComponents"  />
+    </Feature>
+
+    <!-- .Net 4.6.1 Prerequisite -->
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_452_OR_LATER_INSTALLED"/>
+    <Condition Message="Este programa requer .NET Framework 4.5.2. Por favor instale e execute o instalador novamente.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_452_OR_LATER_INSTALLED]]>
+    </Condition>
+    <!-- OS version prerequisite -->
+    <Condition Message="64-bit Windows 7, Server 2008 SP2, ou mais novo é necessário.">
+      <![CDATA[Installed OR (VersionNT >= 601 AND VersionNT64)]]>
+    </Condition>
+
+    <!-- Check if the user has administrator privileges -->
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+
+    <!-- Use the UI that allows an install directory to be chosen-->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <WixVariable Id="WixUILicenseRtf" Value="..\Common\tecfy2se-1.0.rtf" />
+    <UIRef Id="WixUI_InstallDir" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Tecfy2SE">
+          <Directory Id="X86" Name="x86">
+            <Component Id="x86SQLiteInteropdll" Guid="{fc20d299-de59-4e53-8f0c-9fd0b9c92a4d}">
+              <File Source="$(var.WsFileSystemMonitor.TargetDir)x86\SQLite.Interop.dll" KeyPath="yes" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="X86" Title="x86" Level="1">
+      <ComponentRef Id="x86SQLiteInteropdll"/>
+    </Feature>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="WsFileSystemMonitor" Guid="{7A339C63-AEA3-491C-8CB1-C78D21426EC1}">
+        <File Id="WsFileSystemMonitor" Source="$(var.WsFileSystemMonitor.TargetPath)" KeyPath="yes" >
+          <netfx:NativeImage Id="$(var.WsFileSystemMonitor.TargetFileName)" Platform="64bit" Priority="1"   />
+        </File>
+        <ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes"
+						Name="WsFileSystemMonitor" DisplayName="Tecfy2SE Monitoramento e Transferência de Arquivos"
+						Description="Serviço de Monitoramento e Transferência de Arquivos" Start="auto"
+						Account="LocalSystem" ErrorControl="normal"
+            Arguments=" /start WsFileSystemMonitor"
+            Interactive="no" />
+
+        <ServiceControl Id="StartService"  Stop="both" Start="install" Remove="uninstall" Name="WsFileSystemMonitor" Wait="yes" />
+      </Component>
+      <Component Id="WpfSystemMonitor" Guid="{1A1728FA-B37A-4E2F-B923-93CE0AEE791B}">
+        <File Id="WpfSystemMonitor" Source="$(var.WpfSystemMonitor.TargetPath)" KeyPath="yes" >
+          <netfx:NativeImage Id="$(var.WpfSystemMonitor.TargetFileName)" Platform="64bit" Priority="1"   />
+        </File>
+      </Component>
+      <Component Id="WpfSystemMonitorExeConfig" Guid="{AAD9A789-707B-41FA-B14A-364C2DEA668A}">
+        <File Source="$(var.WpfSystemMonitor.TargetDir)$(var.WpfSystemMonitor.TargetFileName).config" KeyPath="yes" />
+      </Component>
+      <Component Id="WpfSystemMonitorExePdb" Guid="{c217d2c2-c224-4d91-b738-0e9dd03ab9b3}">
+        <File Source="$(var.WpfSystemMonitor.TargetDir)$(var.WpfSystemMonitor.TargetName).pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="WsFileSystemMonitorExePdb" Guid="{52D6263A-E94A-47F4-A289-DA128457A341}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)$(var.WsFileSystemMonitor.TargetName).pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="WsFileSystemMonitorExeConfig" Guid="{8665FD57-C8C8-46D2-9031-A1F826AB8FC0}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)$(var.WsFileSystemMonitor.TargetFileName).config" KeyPath="yes" />
+      </Component>
+      <Component Id="NLogConfig" Guid="{32999e2b-0552-47cb-bf91-c47f77c7644f}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)NLog.config" KeyPath="yes" />
+      </Component>
+      <Component Id="folderConfigjson" Guid="{206222a4-4730-4973-9d13-896e47e365c0}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)folderConfig.json" KeyPath="yes" />
+      </Component>
+
+      <Component Id="EntityFrameworkdll" Guid="{acf37d80-b2a6-4d84-8214-098f4caf5acc}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)EntityFramework.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="EntityFrameworkSqlServerdll" Guid="{e6fa6acb-bdc2-4d03-ba4e-7f6f15ef208d}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)EntityFramework.SqlServer.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="EntityFrameworkSqlServerxml" Guid="{396937f6-52a3-402f-a1f1-c30e446baca6}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)EntityFramework.SqlServer.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="EntityFrameworkxml" Guid="{cc38c91f-1cec-4231-93df-e46196f3ae5f}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)EntityFramework.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingCryptodll" Guid="{e4fa5c8f-3707-4cf5-b7f6-edaf614a3e5d}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Crypto.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingCryptopdb" Guid="{bff6f69c-c606-4d13-8d77-535efdff6d6f}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Crypto.pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingHttpdll" Guid="{c6473998-f129-42eb-8f2e-75aabf9d08d8}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Http.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingHttppdb" Guid="{42f5ab9a-c6a2-49c3-944f-a1061aeb5717}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Http.pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingModeldll" Guid="{d2a43e4f-db08-4ed8-9a71-70ad1dc927f4}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Model.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorCrossCuttingModelpdb" Guid="{d28d96b6-ee27-4dcf-8ad8-01487bc065f1}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Model.pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorServicesdll" Guid="{07d0c2bf-a156-4182-8af9-9277e7cec172}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.Services.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="FsMonitorServicespdb" Guid="{28cfd2da-3ee0-4262-82fe-e535952cf302}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.Services.pdb" KeyPath="yes" />
+      </Component>
+      <Component Id="Logdb3" Guid="{182c21ca-f1e2-4724-83f1-23d03959a7b6}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)Log.db3" KeyPath="yes" />
+      </Component>
+      <Component Id="NewtonsoftJsondll" Guid="{5d96cd54-7a23-4860-a6b2-dd0e27f5dc3f}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="NewtonsoftJsonxml" Guid="{e3a52889-b6af-4bbd-bf22-e2ef3cee9748}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)Newtonsoft.Json.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="NLogdll" Guid="{4c8b976f-9586-4d60-9936-71ec9309e311}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)NLog.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="NLogxml" Guid="{c59e0ad4-8ee5-4911-aa23-47bf078c1c2c}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)NLog.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="RestSharpdll" Guid="{45975036-5e69-40c5-8b84-99603ad2e131}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)RestSharp.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="RestSharpxml" Guid="{26fba5b3-8923-4804-886d-70e96a14f2ae}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)RestSharp.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="SystemDataSQLitedll" Guid="{fd5db1c3-da87-4d3a-bc7b-7ceefc944083}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)System.Data.SQLite.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="SystemDataSQLiteEF6dll" Guid="{1f70ec0a-3644-478d-aa50-1258c559a214}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)System.Data.SQLite.EF6.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="SystemDataSQLiteLinqdll" Guid="{9786aba1-b324-4d0b-80ec-594c437101ea}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)System.Data.SQLite.Linq.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="SystemDataSQLitexml" Guid="{249d510c-8f1d-4cc4-bdce-e488412c2b59}">
+        <File Source="$(var.WsFileSystemMonitor.TargetDir)System.Data.SQLite.xml" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

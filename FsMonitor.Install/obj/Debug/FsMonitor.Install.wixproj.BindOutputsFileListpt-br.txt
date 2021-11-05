@@ -1,0 +1,2 @@
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.Install\bin\x86\Debug\pt-br\FsMonitor.Install.msi
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.Install\bin\x86\Debug\pt-br\FsMonitor.Install.wixpdb

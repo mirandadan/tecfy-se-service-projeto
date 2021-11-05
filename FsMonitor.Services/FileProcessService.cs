@@ -16,6 +16,7 @@ namespace FsMonitor.Services
     public class FileProcessService : IDisposable
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly string directory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         private readonly string
             _processingFolder = ConfigurationManager.AppSettings["ProcessingFolder"],
@@ -39,9 +40,9 @@ namespace FsMonitor.Services
         public FileProcessService()
         {
             bool.TryParse(ConfigurationManager.AppSettings["LogUploadResult"], out _logUploadResult);
-            int.TryParse(ConfigurationManager.AppSettings["ProcessedFileLifeTime"], out _lifeTime);
+            int.TryParse(ConfigurationManager.AppSettings["ProcessedFileLifeTime"], out _lifeTime);           
 
-            var json = File.ReadAllText("folderConfig.json");
+            var json = File.ReadAllText(Path.Combine(directory, "folderConfig.json"));
             _folderConfig = JsonConvert.DeserializeObject<List<FolderConfig>>(json);
 
             CreateDir(_processingFolder);

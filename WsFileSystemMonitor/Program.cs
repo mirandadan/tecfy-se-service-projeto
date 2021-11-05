@@ -3,7 +3,6 @@ using System.Configuration.Install;
 using System.Linq;
 using System.Reflection;
 using System.ServiceProcess;
-using System.Threading;
 
 namespace WsFileSystemMonitor
 {

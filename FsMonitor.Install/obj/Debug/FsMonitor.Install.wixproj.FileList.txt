@@ -1,0 +1,6 @@
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.Install\bin\x86\Debug\pt-br\FsMonitor.Install.msi
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.Install\bin\x86\Debug\pt-br\FsMonitor.Install.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\FsMonitor.Install.wixproj.BindContentsFileListpt-br.txt
+obj\Debug\FsMonitor.Install.wixproj.BindOutputsFileListpt-br.txt
+obj\Debug\FsMonitor.Install.wixproj.BindBuiltOutputsFileListpt-br.txt
