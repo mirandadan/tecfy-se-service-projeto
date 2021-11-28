@@ -1,6 +1,7 @@
 ﻿using FsMonitor.CrossCutting.Crypto;
 using RestSharp;
 using RestSharp.Authenticators;
+using System;
 using System.Net;
 
 namespace FsMonitor.CrossCutting.Http
@@ -38,18 +39,25 @@ namespace FsMonitor.CrossCutting.Http
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
             ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
 
-            var response = _restClient.Execute(request);
-            if (response.StatusCode == HttpStatusCode.Created)
+            try
             {
-                return response.Content;
-            }
+                var response = _restClient.Execute(request);
+                if (response.StatusCode == HttpStatusCode.Created)
+                {
+                    return response.Content;
+                }
 
-            if (response.ResponseStatus == ResponseStatus.Error)
+                if (response.ResponseStatus == ResponseStatus.Error)
+                {
+                   throw new System.Exception(response.ErrorMessage);
+                }
+
+                throw new WebException(response.Content);
+            }
+            catch (Exception ex)
             {
-                throw new System.Exception(response.ErrorMessage);
+                throw ex;
             }
-
-            throw new WebException(response.Content);
         }
     }
 }

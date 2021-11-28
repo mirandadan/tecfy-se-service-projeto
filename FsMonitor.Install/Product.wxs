@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:netfx ="http://schemas.microsoft.com/wix/NetFxExtension">
-  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE" Language="1033" Version="1.0.0" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
+  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE" Language="1033" Version="1.0.1" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"
              Platform="x64"
              InstallPrivileges="elevated"
              Description="Tecfy2SE"
-             Comments="Tecfy2SE 1.0.0 installation package"
+             Comments="Tecfy2SE 1.0.1 installation package"
              Id="*" />
 
     <MajorUpgrade DowngradeErrorMessage="Uma versão mais nova de [ProductName] já está instalada."

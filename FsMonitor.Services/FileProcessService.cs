@@ -162,6 +162,7 @@ namespace FsMonitor.Services
             catch (WebException ex)
             {
                 logger.Error($"Erro ao enviar aquivo Source: {ex.Source}");
+                throw ex;
             }
             catch (Exception ex)
             {
