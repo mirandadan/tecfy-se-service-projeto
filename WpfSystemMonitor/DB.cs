@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 
@@ -10,7 +11,7 @@ namespace WpfSystemMonitor
 
         private static SQLiteConnection DbConnection()
         {
-            sqliteConnection = new SQLiteConnection(@"Data Source=C:\\Tecfy2SE\\Log.db3;Version=3; Version=3;");
+            sqliteConnection = new SQLiteConnection(ConfigurationManager.AppSettings["DataBaseNLog"]);
             if (sqliteConnection.State == ConnectionState.Closed)
                 sqliteConnection.Open();
 

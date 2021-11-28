@@ -18,7 +18,8 @@ namespace FsMonitor.CrossCutting.Http
             _restClient.Authenticator = new HttpBasicAuthenticator(Decrypt.GetDecrypt(userName), Decrypt.GetDecrypt(password));
             _restClient.Timeout = -1;
 
-            if (!string.IsNullOrEmpty(proxyAddress)) {
+            if (!string.IsNullOrEmpty(proxyAddress))
+            {
                 ProxyAddress = proxyAddress;
                 _restClient.Proxy = new WebProxy(proxyAddress);
             }
@@ -34,10 +35,20 @@ namespace FsMonitor.CrossCutting.Http
             request.AddParameter("name", fileName);
             request.AddParameter("hash", folderHash);
 
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+
             var response = _restClient.Execute(request);
-            if(response.StatusCode == HttpStatusCode.Created) {                
+            if (response.StatusCode == HttpStatusCode.Created)
+            {
                 return response.Content;
             }
+
+            if (response.ResponseStatus == ResponseStatus.Error)
+            {
+                throw new System.Exception(response.ErrorMessage);
+            }
+
             throw new WebException(response.Content);
         }
     }

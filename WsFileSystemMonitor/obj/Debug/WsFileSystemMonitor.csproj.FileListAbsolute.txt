@@ -29,5 +29,6 @@ D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.ProjectInstaller.resources
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.csproj.GenerateResource.cache
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.csproj.CoreCompileInputs.cache
+D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.csproj.CopyComplete
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.exe
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\obj\Debug\WsFileSystemMonitor.pdb

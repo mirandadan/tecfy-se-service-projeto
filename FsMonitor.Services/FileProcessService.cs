@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace FsMonitor.Services
         public FileProcessService()
         {
             bool.TryParse(ConfigurationManager.AppSettings["LogUploadResult"], out _logUploadResult);
-            int.TryParse(ConfigurationManager.AppSettings["ProcessedFileLifeTime"], out _lifeTime);           
+            int.TryParse(ConfigurationManager.AppSettings["ProcessedFileLifeTime"], out _lifeTime);
 
             var json = File.ReadAllText(Path.Combine(directory, "folderConfig.json"));
             _folderConfig = JsonConvert.DeserializeObject<List<FolderConfig>>(json);
@@ -55,29 +56,39 @@ namespace FsMonitor.Services
             _monitorService.OnFileReady += Monitor_OnFileReady;
             _monitorService.Start();
 
-            if (_lifeTime >= 0) {
+            if (_lifeTime >= 0)
+            {
                 _scrollCompletedFiles = Task.Factory.StartNew(ScrollCompletedFiles);
             }
         }
 
         private void ScrollCompletedFiles()
         {
-            while (!_stop) {
+            while (!_stop)
+            {
                 string[] files = Directory.GetFiles(_completeFolder);
                 logger.Info($"{files.Length} arquivos encontrados completados: {_completeFolder}");
-                for (int i = 0; i < files.Length; i++) {
-                    try {
-                        if (_lifeTime == 0) {
+                for (int i = 0; i < files.Length; i++)
+                {
+                    try
+                    {
+                        if (_lifeTime == 0)
+                        {
                             logger.Info($"Arquivo deletado: {files[i]}");
                             File.Delete(files[i]);
-                        } else {
+                        }
+                        else
+                        {
                             var fileInfo = new FileInfo(files[i]);
-                            if (fileInfo.CreationTime < DateTime.Now.AddMinutes(-1 * _lifeTime)) {
+                            if (fileInfo.CreationTime < DateTime.Now.AddMinutes(-1 * _lifeTime))
+                            {
                                 logger.Info($"Excluindo arquivo: {fileInfo} escrito pela última vez em {fileInfo.LastAccessTime}");
                                 fileInfo.Delete();
                             }
                         }
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e)
+                    {
                         logger.Error(e);
                     }
                 }
@@ -87,7 +98,8 @@ namespace FsMonitor.Services
 
         private void CreateDir(string dir)
         {
-            if (!Directory.Exists(dir)) {
+            if (!Directory.Exists(dir))
+            {
                 Directory.CreateDirectory(dir);
                 logger.Info($"Diretório criado: {dir}");
             }
@@ -101,12 +113,13 @@ namespace FsMonitor.Services
             {
                 Directory.CreateDirectory(destinationFolder);
             }
-            
+
             var destFileName = Path.Combine(destinationFolder, Path.GetFileName(fileName));
 
             logger.Info($"Movendo arquivo de {fileName} para {destFileName}");
 
-            if (File.Exists(destFileName)) {
+            if (File.Exists(destFileName))
+            {
                 File.Delete(destFileName);
             }
 
@@ -117,18 +130,21 @@ namespace FsMonitor.Services
         {
             logger.Info($"Arquivo a ser processado: {e.FullName}");
             var currentFileName = e.FullName;
-            if (File.Exists(e.FullName)) {
+            if (File.Exists(e.FullName))
+            {
                 if (!currentFileName.Contains(_processingFolder))
                 {
                     currentFileName = Move(e.FullName, _processingFolder);
                 }
-                try {
+                try
+                {
                     Send(currentFileName);
                     Move(currentFileName, _completeFolder);
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     Move(currentFileName, _errorFolder);
                     logger.Info($"Devido ao erro ao enviar o arquivo, está sendo movido {currentFileName} para {_errorFolder}");
-                    Move(currentFileName, _errorFolder);
                     logger.Error($"ERRO: {ex}");
                 }
             }
@@ -143,19 +159,25 @@ namespace FsMonitor.Services
                 logger.Info($"Enviado com sucesso arquivo:{currentFileName} resposta: {jsonResult}");
                 SaveResultLog(currentFileName, jsonResult);
             }
+            catch (WebException ex)
+            {
+                logger.Error($"Erro ao enviar aquivo Source: {ex.Source}");
+            }
             catch (Exception ex)
             {
-                logger.Error($"Erro ao enviar aquivo: {ex}");
+                logger.Error($"Erro ao enviar aquivo Source: {ex.Source}");
                 throw ex;
             }
         }
 
         private void SaveResultLog(string currentFileName, string jsonResult)
         {
-            if (_logUploadResult) {
+            if (_logUploadResult)
+            {
                 var currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 var logFolder = Path.Combine(currentFolder, "Logs", "UploadResults", DateTime.Today.ToString("yyyy-MM-dd"));
-                if (!Directory.Exists(logFolder)) {
+                if (!Directory.Exists(logFolder))
+                {
                     Directory.CreateDirectory(logFolder);
                 }
 
@@ -167,29 +189,27 @@ namespace FsMonitor.Services
         private string GetHash(string currentFileName)
         {
             var folder = GetFolder(currentFileName);
-                        
-            return _folderConfig.Where(f => { return f.Folder == folder; }).First().Hash;        
+
+            return _folderConfig.Where(f => { return f.Folder == folder; }).First().Hash;
         }
 
         private string GetFolder(string currentFileName)
         {
             var folder = currentFileName.Split('\\');
+            var directory = folder.Length - 2;
 
-            if (currentFileName.Contains(_processingFolder))
-            {
-                return folder[3];
-            }
-
-            return folder[2];
+            return folder[directory];
         }
         public void Dispose()
         {
             _monitorService.Dispose();
 
-            if(_scrollCompletedFiles != null) {
+            if (_scrollCompletedFiles != null)
+            {
                 _stop = true;
                 _scrollCompletedFiles.Wait(3000);
-                _scrollCompletedFiles.Dispose();
+                if (_scrollCompletedFiles.IsCompleted)
+                    _scrollCompletedFiles.Dispose();
             }
         }
     }
