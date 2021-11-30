@@ -190,8 +190,15 @@ namespace FsMonitor.Services
         private string GetHash(string currentFileName)
         {
             var folder = GetFolder(currentFileName);
-
-            return _folderConfig.Where(f => { return f.Folder == folder; }).First().Hash;
+            try
+            {
+                return _folderConfig.Where(f => { return f.Folder == folder; }).First().Hash;
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Erro ao procurar a configuração do diretorio: {folder}");
+                throw ex;
+            }
         }
 
         private string GetFolder(string currentFileName)
