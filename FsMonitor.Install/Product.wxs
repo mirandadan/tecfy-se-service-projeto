@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:netfx ="http://schemas.microsoft.com/wix/NetFxExtension">
-  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE-SB" Language="1033" Version="1.0.2" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
+  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE-SB" Language="1033" Version="1.0.3" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"
              Platform="x64"
              InstallPrivileges="elevated"
-             Description="Tecfy2SE-SB V.1.0.2"
-             Comments="Tecfy2SE-SB V.1.0.2 installation package"
+             Description="Tecfy2SE-SB V.1.0.3"
+             Comments="Tecfy2SE-SB V.1.0.3 installation package"
              Id="*" />
 
     <MajorUpgrade DowngradeErrorMessage="Uma versão mais nova de [ProductName] já está instalada."
@@ -64,7 +64,7 @@
           <netfx:NativeImage Id="$(var.WsFileSystemMonitor.TargetFileName)" Platform="64bit" Priority="1"   />
         </File>
         <ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes"
-						Name="WsFileSystemMonitor" DisplayName="Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.2"
+						Name="WsFileSystemMonitor" DisplayName="Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.3"
 						Description="Serviço de Monitoramento e Transferência de Arquivos" Start="auto"
 						Account="LocalSystem" ErrorControl="normal"
             Arguments=" /start WsFileSystemMonitor"

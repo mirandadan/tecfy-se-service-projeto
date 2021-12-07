@@ -22,8 +22,7 @@ namespace FsMonitor.Services
         private readonly string
             _processingFolder = ConfigurationManager.AppSettings["ProcessingFolder"],
             _completeFolder = ConfigurationManager.AppSettings["CompleteFolder"],
-            _errorFolder = ConfigurationManager.AppSettings["ErrorFolder"],
-            _folderHash = ConfigurationManager.AppSettings["FolderHash"];
+            _errorFolder = ConfigurationManager.AppSettings["ErrorFolder"];
         private readonly bool _logUploadResult;
         private readonly int _lifeTime = 0;
         private readonly List<FolderConfig> _folderConfig;
@@ -104,6 +103,7 @@ namespace FsMonitor.Services
                 logger.Info($"Diretório criado: {dir}");
             }
         }
+
         private string Move(string fileName, string destinationFolder)
         {
             var folder = GetFolder(fileName);
@@ -126,6 +126,7 @@ namespace FsMonitor.Services
             File.Move(fileName, destFileName);
             return destFileName;
         }
+
         private void Monitor_OnFileReady(object sender, MonitorEventArgs e)
         {
             logger.Info($"Arquivo a ser processado: {e.FullName}");
@@ -149,6 +150,7 @@ namespace FsMonitor.Services
                 }
             }
         }
+       
         private void Send(string currentFileName)
         {
             try
@@ -208,6 +210,7 @@ namespace FsMonitor.Services
 
             return folder[directory];
         }
+        
         public void Dispose()
         {
             _monitorService.Dispose();

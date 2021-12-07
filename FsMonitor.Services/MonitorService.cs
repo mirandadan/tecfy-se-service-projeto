@@ -33,6 +33,7 @@ namespace FsMonitor.Services
         public void Start()
         {
             StartMonitor();
+            Task.Delay(30000).Wait();
             _scrollPendentFiles = Task.Factory.StartNew(ScrollPendentFiles);
         }
 
@@ -43,7 +44,7 @@ namespace FsMonitor.Services
             }
             if (_scrollPendentFiles != null) {
                 _stop = true;
-                _scrollPendentFiles.Wait(3000);
+                _scrollPendentFiles.Wait(30000);
                 _scrollPendentFiles.Dispose();
             }
         }
@@ -111,6 +112,7 @@ namespace FsMonitor.Services
                 _pendingFiles.TryRemove(e.FullPath, out lastWrite);
             }
         }
+
         private void _watcher_CreatedOrChanged(object sender, FileSystemEventArgs e)
         {
             bool isDir = (File.GetAttributes(e.FullPath) & FileAttributes.Directory) == FileAttributes.Directory;

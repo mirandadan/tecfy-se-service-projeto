@@ -5,6 +5,7 @@ D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Mod
 D:\Desenv\Tecfy\TecfyRH\TecfyJobs\WsFileSystemMonitor\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.pdb
 D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\bin\Debug\FsMonitor.CrossCutting.Model.dll
 D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\bin\Debug\FsMonitor.CrossCutting.Model.pdb
+D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.csproj.AssemblyReference.cache
 D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.csproj.CoreCompileInputs.cache
 D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.dll
 D:\Dev\Tecfy\tecfy-se-service\FsMonitor.CrossCutting.Model\obj\Debug\FsMonitor.CrossCutting.Model.pdb
