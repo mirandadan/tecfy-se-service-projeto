@@ -38,8 +38,8 @@
             // 
             // fsServiceInstaller
             // 
-            this.fsServiceInstaller.Description = "Serviço de Monitoramento e Transferência de Arquivos V.1.0.3";
-            this.fsServiceInstaller.DisplayName = "Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.3";
+            this.fsServiceInstaller.Description = "Serviço de Monitoramento e Transferência de Arquivos V.1.0.6";
+            this.fsServiceInstaller.DisplayName = "Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.6";
             this.fsServiceInstaller.ServiceName = "WsFileSystemMonitor";
             this.fsServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 

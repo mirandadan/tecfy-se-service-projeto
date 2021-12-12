@@ -25,7 +25,8 @@ namespace FsMonitor.Services
         public MonitorService()
         {
             var config = ConfigurationManager.AppSettings["FileReadyDelay"];
-            if (!int.TryParse(config, out _fileReadyDelay)) {
+            if (!int.TryParse(config, out _fileReadyDelay))
+            {
                 _fileReadyDelay = 10;
             }
         }
@@ -33,18 +34,20 @@ namespace FsMonitor.Services
         public void Start()
         {
             StartMonitor();
-            Task.Delay(30000).Wait();
+            Task.Delay(5000).Wait();
             _scrollPendentFiles = Task.Factory.StartNew(ScrollPendentFiles);
         }
 
         public void Dispose()
         {
-            if (_watcher != null) {
+            if (_watcher != null)
+            {
                 _watcher.Dispose();
             }
-            if (_scrollPendentFiles != null) {
+            if (_scrollPendentFiles != null)
+            {
                 _stop = true;
-                _scrollPendentFiles.Wait(30000);
+                _scrollPendentFiles.Wait(3000);
                 _scrollPendentFiles.Dispose();
             }
         }
@@ -52,13 +55,15 @@ namespace FsMonitor.Services
         [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
         private void StartMonitor()
         {
-            if (!Directory.Exists(_pendingFolder)) {
+            if (!Directory.Exists(_pendingFolder))
+            {
                 Directory.CreateDirectory(_pendingFolder);
             }
 
             var files = Directory.GetFiles(_pendingFolder, "*", SearchOption.AllDirectories);
             logger.Info($"{files.Length} arquivos pendentes encontrados: {_pendingFolder}");
-            for (int i = 0; i < files.Length; i++) {
+            for (int i = 0; i < files.Length; i++)
+            {
                 _pendingFiles.TryAdd(files[i], DateTime.Now);
             }
 
@@ -84,30 +89,43 @@ namespace FsMonitor.Services
         }
         private void ScrollPendentFiles()
         {
-            while (!_stop) {
-                //logger.Info($"{_pendingFiles.Keys} arquivos pendentes");
-                if (OnFileReady != null) {
-                    foreach (string key in _pendingFiles.Keys) {
-                        if (_stop) {
-                            break;
-                        }
+            while (!_stop)
+            {
+                try
+                {
+                    if (OnFileReady != null)
+                    {
+                        foreach (string key in _pendingFiles.Keys)
+                        {
+                            if (_stop)
+                                break;
 
-                        if (File.Exists(key)) {
-                            DateTime lastWrite;
-                            if (_pendingFiles.TryGetValue(key, out lastWrite) && lastWrite < DateTime.Now.AddSeconds(-1 * _fileReadyDelay)) {
-                                OnFileReady.Invoke(this, new MonitorEventArgs(key));
+                            if (File.Exists(key))
+                            {
+                                fileLocked(key);
+                                DateTime lastWrite;
+                                if (_pendingFiles.TryGetValue(key, out lastWrite) && lastWrite < DateTime.Now.AddSeconds(-1 * _fileReadyDelay))
+                                {
+                                    OnFileReady.Invoke(this, new MonitorEventArgs(key));
+                                }
                             }
                         }
                     }
                 }
-                Task.Delay(3000).Wait();
-
+                catch (Exception ex)
+                {
+                    logger.Error($"ERRO: {ex}");
+                }
+                Task.Delay(5000).Wait();
             }
         }
 
         private void _watcher_Deleted(object sender, FileSystemEventArgs e)
         {
-            if (_pendingFiles.ContainsKey(e.FullPath)) {
+            fileLocked(e.FullPath);
+
+            if (_pendingFiles.ContainsKey(e.FullPath))
+            {
                 DateTime lastWrite;
                 _pendingFiles.TryRemove(e.FullPath, out lastWrite);
             }
@@ -115,17 +133,70 @@ namespace FsMonitor.Services
 
         private void _watcher_CreatedOrChanged(object sender, FileSystemEventArgs e)
         {
-            bool isDir = (File.GetAttributes(e.FullPath) & FileAttributes.Directory) == FileAttributes.Directory;
+            fileLocked(e.FullPath);
 
-            if (!isDir) {
-                if (_pendingFiles.ContainsKey(e.FullPath)) {
-                    logger.Info($"Atualizando a data de alteração do arquivo {e.FullPath} no monitoramento.");
-                    _pendingFiles.AddOrUpdate(e.FullPath, DateTime.Now, (key, oldvalue) => oldvalue = DateTime.Now);
-                } else {
-                    logger.Info($"Adicionando o arquivo {e.FullPath} no monitoramento.");
-                    _pendingFiles.TryAdd(e.FullPath, DateTime.Now);
+            if (File.Exists(e.FullPath))
+            {
+                bool isDir = (File.GetAttributes(e.FullPath) & FileAttributes.Directory) == FileAttributes.Directory;
+
+                if (!isDir)
+                {
+                    if (_pendingFiles.ContainsKey(e.FullPath))
+                    {
+                        logger.Info($"Atualizando a data de alteração do arquivo {e.FullPath} no monitoramento.");
+                        _pendingFiles.AddOrUpdate(e.FullPath, DateTime.Now, (key, oldvalue) => oldvalue = DateTime.Now);
+                    }
+                    else
+                    {
+                        logger.Info($"Adicionando o arquivo {e.FullPath} no monitoramento.");
+                        _pendingFiles.TryAdd(e.FullPath, DateTime.Now);
+                    }
                 }
             }
+        }
+
+
+        private void fileLocked(string filename)
+        {
+            while (true)
+            {
+                if (!this.IsFileLocked(filename))
+                    break;
+                else
+                    Task.Delay(1000).Wait();
+            }
+        }
+
+        public bool IsFileLocked(string filename)
+        {
+            FileStream fs = null;
+            bool Locked = false;
+            try
+            {
+                if (File.Exists(filename))
+                {
+                    fs =
+                       File.Open(filename, FileMode.OpenOrCreate,
+                       FileAccess.ReadWrite, FileShare.None);
+                    fs.Close();
+                }
+            }
+            catch (IOException)
+            {
+                logger.Info($"Arquivo {filename} locked");
+                Locked = true;
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"ERRO: {ex}");
+                Locked = false;
+            }
+            finally
+            {
+                if (fs != null)
+                    fs.Close();
+            }
+            return Locked;
         }
     }
 }

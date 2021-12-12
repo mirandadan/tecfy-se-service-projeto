@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:netfx ="http://schemas.microsoft.com/wix/NetFxExtension">
-  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE-SB" Language="1033" Version="1.0.3" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
+  <Product Id="{D93846FF-1006-4037-A874-7CA817831F97}" Name="Tecfy2SE-SB" Language="1033" Version="1.0.6" Manufacturer="TECFY Tecnologia e Sistemas" UpgradeCode="409ff0d1-1c3a-4f8d-8a5a-350705977809">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"
              Platform="x64"
              InstallPrivileges="elevated"
-             Description="Tecfy2SE-SB V.1.0.3"
-             Comments="Tecfy2SE-SB V.1.0.3 installation package"
+             Description="Tecfy2SE-SB V.1.0.6"
+             Comments="Tecfy2SE-SB V.1.0.6 installation package"
              Id="*" />
 
     <MajorUpgrade DowngradeErrorMessage="Uma versão mais nova de [ProductName] já está instalada."
@@ -64,7 +64,7 @@
           <netfx:NativeImage Id="$(var.WsFileSystemMonitor.TargetFileName)" Platform="64bit" Priority="1"   />
         </File>
         <ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes"
-						Name="WsFileSystemMonitor" DisplayName="Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.3"
+						Name="WsFileSystemMonitor" DisplayName="Tecfy2SE-SB Monitoramento e Transferência de Arquivos V.1.0.6"
 						Description="Serviço de Monitoramento e Transferência de Arquivos" Start="auto"
 						Account="LocalSystem" ErrorControl="normal"
             Arguments=" /start WsFileSystemMonitor"
@@ -79,12 +79,6 @@
       </Component>
       <Component Id="WpfSystemMonitorExeConfig" Guid="{AAD9A789-707B-41FA-B14A-364C2DEA668A}">
         <File Source="$(var.WpfSystemMonitor.TargetDir)$(var.WpfSystemMonitor.TargetFileName).config" KeyPath="yes" />
-      </Component>
-      <Component Id="WpfSystemMonitorExePdb" Guid="{c217d2c2-c224-4d91-b738-0e9dd03ab9b3}">
-        <File Source="$(var.WpfSystemMonitor.TargetDir)$(var.WpfSystemMonitor.TargetName).pdb" KeyPath="yes" />
-      </Component>
-      <Component Id="WsFileSystemMonitorExePdb" Guid="{52D6263A-E94A-47F4-A289-DA128457A341}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)$(var.WsFileSystemMonitor.TargetName).pdb" KeyPath="yes" />
       </Component>
       <Component Id="WsFileSystemMonitorExeConfig" Guid="{8665FD57-C8C8-46D2-9031-A1F826AB8FC0}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)$(var.WsFileSystemMonitor.TargetFileName).config" KeyPath="yes" />
@@ -111,29 +105,14 @@
       <Component Id="FsMonitorCrossCuttingCryptodll" Guid="{e4fa5c8f-3707-4cf5-b7f6-edaf614a3e5d}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Crypto.dll" KeyPath="yes" />
       </Component>
-      <Component Id="FsMonitorCrossCuttingCryptopdb" Guid="{bff6f69c-c606-4d13-8d77-535efdff6d6f}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Crypto.pdb" KeyPath="yes" />
-      </Component>
       <Component Id="FsMonitorCrossCuttingHttpdll" Guid="{c6473998-f129-42eb-8f2e-75aabf9d08d8}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Http.dll" KeyPath="yes" />
-      </Component>
-      <Component Id="FsMonitorCrossCuttingHttppdb" Guid="{42f5ab9a-c6a2-49c3-944f-a1061aeb5717}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Http.pdb" KeyPath="yes" />
       </Component>
       <Component Id="FsMonitorCrossCuttingModeldll" Guid="{d2a43e4f-db08-4ed8-9a71-70ad1dc927f4}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Model.dll" KeyPath="yes" />
       </Component>
-      <Component Id="FsMonitorCrossCuttingModelpdb" Guid="{d28d96b6-ee27-4dcf-8ad8-01487bc065f1}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.CrossCutting.Model.pdb" KeyPath="yes" />
-      </Component>
       <Component Id="FsMonitorServicesdll" Guid="{07d0c2bf-a156-4182-8af9-9277e7cec172}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.Services.dll" KeyPath="yes" />
-      </Component>
-      <Component Id="FsMonitorServicespdb" Guid="{28cfd2da-3ee0-4262-82fe-e535952cf302}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)FsMonitor.Services.pdb" KeyPath="yes" />
-      </Component>
-      <Component Id="Logdb3" Guid="{182c21ca-f1e2-4724-83f1-23d03959a7b6}">
-        <File Source="$(var.WsFileSystemMonitor.TargetDir)Log.db3" KeyPath="yes" />
       </Component>
       <Component Id="NewtonsoftJsondll" Guid="{5d96cd54-7a23-4860-a6b2-dd0e27f5dc3f}">
         <File Source="$(var.WsFileSystemMonitor.TargetDir)Newtonsoft.Json.dll" KeyPath="yes" />

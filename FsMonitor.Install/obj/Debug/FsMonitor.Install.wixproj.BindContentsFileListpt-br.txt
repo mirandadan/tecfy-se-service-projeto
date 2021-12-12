@@ -4,14 +4,9 @@ D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\EntityFramework.SqlS
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\EntityFramework.xml
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\folderConfig.json
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Crypto.dll
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Crypto.pdb
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Http.dll
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Http.pdb
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Model.dll
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.CrossCutting.Model.pdb
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.Services.dll
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\FsMonitor.Services.pdb
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\Log.db3
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\Newtonsoft.Json.dll
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\Newtonsoft.Json.xml
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\NLog.config
@@ -26,7 +21,5 @@ D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\System.Data.SQLite.L
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\System.Data.SQLite.xml
 D:\Dev\Tecfy\tecfy-se-service\WpfSystemMonitor\bin\Debug\WpfSystemMonitor.exe
 D:\Dev\Tecfy\tecfy-se-service\WpfSystemMonitor\bin\Debug\WpfSystemMonitor.exe.config
-D:\Dev\Tecfy\tecfy-se-service\WpfSystemMonitor\bin\Debug\WpfSystemMonitor.pdb
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe
 D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.exe.config
-D:\Dev\Tecfy\tecfy-se-service\WsFileSystemMonitor\bin\Debug\WsFileSystemMonitor.pdb

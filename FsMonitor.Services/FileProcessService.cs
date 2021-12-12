@@ -65,33 +65,39 @@ namespace FsMonitor.Services
         {
             while (!_stop)
             {
-                string[] files = Directory.GetFiles(_completeFolder);
-                logger.Info($"{files.Length} arquivos encontrados completados: {_completeFolder}");
-                for (int i = 0; i < files.Length; i++)
+                try
                 {
-                    try
+                    // Recurse into subdirectories of this directory.
+                    string[] subdirectoryEntries = Directory.GetDirectories(_completeFolder);
+                    logger.Info($"{subdirectoryEntries.Length} subdiretórios encontrados em {_completeFolder}");
+                    foreach (string subdirectory in subdirectoryEntries)
                     {
-                        if (_lifeTime == 0)
+                        string[] files = Directory.GetFiles(subdirectory);
+                        logger.Info($"{files.Length} arquivos encontrados em {subdirectory}");
+                        for (int i = 0; i < files.Length; i++)
                         {
-                            logger.Info($"Arquivo deletado: {files[i]}");
-                            File.Delete(files[i]);
-                        }
-                        else
-                        {
-                            var fileInfo = new FileInfo(files[i]);
-                            if (fileInfo.CreationTime < DateTime.Now.AddMinutes(-1 * _lifeTime))
+                            if (_lifeTime == 0)
                             {
-                                logger.Info($"Excluindo arquivo: {fileInfo} escrito pela última vez em {fileInfo.LastAccessTime}");
-                                fileInfo.Delete();
+                                logger.Info($"Arquivo deletado: {files[i]}");
+                                File.Delete(files[i]);
+                            }
+                            else
+                            {
+                                var fileInfo = new FileInfo(files[i]);
+                                if (fileInfo.CreationTime < DateTime.Now.AddMinutes(-1 * _lifeTime))
+                                {
+                                    logger.Info($"Excluindo arquivo: {fileInfo} escrito pela última vez em {fileInfo.LastAccessTime}");
+                                    fileInfo.Delete();
+                                }
                             }
                         }
                     }
-                    catch (Exception e)
-                    {
-                        logger.Error(e);
-                    }
                 }
-                Task.Delay(30000).Wait();
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                }
+                Task.Delay(10000).Wait();
             }
         }
 
@@ -150,7 +156,7 @@ namespace FsMonitor.Services
                 }
             }
         }
-       
+
         private void Send(string currentFileName)
         {
             try
@@ -210,7 +216,7 @@ namespace FsMonitor.Services
 
             return folder[directory];
         }
-        
+
         public void Dispose()
         {
             _monitorService.Dispose();
