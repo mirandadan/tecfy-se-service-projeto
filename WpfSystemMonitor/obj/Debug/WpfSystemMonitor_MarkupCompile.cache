@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Dev\Tecfy\tecfy-se-service\WpfSystemMonitor\obj\Debug\
+C:\Dev\Projetos\tecfy-se-service\WpfSystemMonitor\obj\Debug\
 WpfSystemMonitor
 none
 false
 DEBUG;TRACE
-D:\Dev\Tecfy\tecfy-se-service\WpfSystemMonitor\App.xaml
-11151548125
-1-2138471434
-7-1186103821
-25-1907619734
+C:\Dev\Projetos\tecfy-se-service\WpfSystemMonitor\App.xaml
+1219584333
+1-183687082
+82125967333
+25-742057124
 MainWindow.xaml;
 
-False
+True
 
